@@ -368,10 +368,9 @@ When creating a new job, you will be prompted by a dialog outlining the differen
 
 Available job types include:
 
-- **Cloud Sync** - Real-time replication from enterprise NAS devices to public and private object storage with support for volume-wide point-in-time recovery. Each file is stored as a single, transparent object with optional version tracking.
+- **Cloud Backup and Replication** - Real-time replication from enterprise NAS devices to public and private object storage with support for volume-wide point-in-time recovery. Each file is stored as a single, transparent object with optional version tracking.
 - **DFS-N Management** - Manages new and existing Microsoft DFS Namespaces. Can be combined with File Collaboration, File Synchronization, and/or File Replication jobs to automate DFS failover and failback.
 - **File Collaboration** - Real-time synchronization combined with distributed file locking to power global collaboration and project sharing across enterprise NAS platforms, locations, cloud infrastructures, and organizations.
-- **File Locking** - Distributed file locking between Windows File Servers. This can be paired with Microsoft DFS Replication for a basic collaboration solution.
 - **File Replication** - One-way real-time replication from enterprise NAS platforms to any SMB destination.
 - **File Synchronization** - Multi-directional real-time synchronization powering high availability of user and application data across enterprise NAS platforms, locations, cloud infrastructures, and organizations.
 
@@ -438,7 +437,7 @@ Files and PeerAgentA
 
    .. note::
 
-     While Nutanix Files 3.2 supports nested shares, they are not currently supported for replication with Peer Global File Service. Support for this feature is being targeted for Files 3.5 timeframe.
+     Peer Global File Service supports the replication of data within nested shares starting with Nutanix Files v3.5.1 and above.
 
    .. note::
 
@@ -615,7 +614,7 @@ As this tool is primarily for our partners, we would love to hear any feedback y
    - **Username** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
 
-#. Within the VM, download the File System Analyzer installer: https://www.peersoftware.com/downloads/fsa/FileSystemAnalyzer_Installer_v1.1.3.4.exe.
+#. Within the VM, download the File System Analyzer installer: https://www.peersoftware.com/downloads/fsa/12/FileSystemAnalyzer_win64.exe.
 
 #. Run the installer and select **Standard Installation**.
 
@@ -655,7 +654,7 @@ As this tool is primarily for our partners, we would love to hear any feedback y
 
 #. Click **Next**.
 
-   The File System Analyzer will automatically begin scanning the entered paths. When all scans, analyses, and uploads are complete, you will see a status that is similar to the following:
+   Click the **Start** button to begin scanning the entered paths. When all scans, analyses, and uploads are complete, you will see a status that is similar to the following:
 
    .. figure:: images/fsa5.png
 
@@ -667,22 +666,32 @@ As this tool is primarily for our partners, we would love to hear any feedback y
 
      Report download links are only active for **24 hours**. Contact Peer Software to access any expired reports.
 
+     Some systems may open these workbooks in a protected mode, displaying this message in Excel:
+   .. figure:: images/fsa8.png
+     If you see this message at the top of Excel, click Enable Editing to fully open the workbook. If you do not do this, the pivot tables and charts will not load properly.
+
    The full report contains the following information:
 
-   - **InfoSheet** – Details about this specific scan.
-   - **OverallStats** – Overall statistics for the folder that was scanned. This includes total bytes, files, folders, etc.
-   - **FileExtSize** – A list of all discovered extensions, sorted by total bytes.
-   - **FileExtCount** – A list of all discovered extensions, sorted by total files.
-   - **TreeDepth** – A tally of bytes, folders, and files found at each depth level of the folder structure.
-   - **ReparsePoints** – A list of all folder reparse points discovered.
-   - **ReparsePointsSummary** – A summary of all reparse points discovered, regardless of file or folder.
-   - **HighSubFolderCounts** – A list of all folders containing more than 1000 child directories.
-   - **HighByteCounts** – A list of all folders containing more than 100GB of child file data.
-   - **HighFileCounts** – A list of all folders containing more than 10,000 child files.
-   - **LargeFiles** – A list of all discovered files that are 10GB or larger.
-   - **FileAttributes** – A summary of all file and folder attributes found.
-   - **TimeAnalysis** – A breakdown of total files, folders, and bytes by age.
-   - **TLDAnalysis** - A list of each folder immediately under a specified path with statistics for each of these subfolders. In a user home directory environment, each of these subfolders should represent a different user.
+   -	**Overview** – A series of pivot tables and charts showing high level statistics about the path that was scanned.
+   -	**Analysis** – Includes a pivot table and a pair of charts highlighting additional statistics about the path that was scanned.
+   -	**InfoSheet** – Details about this specific scan.
+   -	**OverallStats** – Overall statistics for the folder that was scanned. This includes total bytes, files, folders, etc.
+   -	**HighSubFolderCounts** – A list of all folders containing more than 1000 child directories.
+   -	**HighByteCounts** – A list of all folders containing more than 100GB of child file data.
+   -	**HighFileCounts** – A list of all folders containing more than 10,000 child files.
+   -	**LargeFiles** – A list of all discovered files that are 10GB or larger.
+   -	**DeepPaths** – A list of all paths discovered that are 20 levels deep or deeper.
+   -	**ReparsePointsSummary** – A summary of all reparse points discovered, regardless of file or folder.
+   -	**ReparsePoints** – A list of all folder reparse points discovered.
+   -	**TimeAnalysis** – A breakdown of total files, folders, and bytes by age.
+   -	**TLDAnalysis** - A list of each folder immediately under a specified path with statistics for each of these subfolders. In a user home directory environment, each of these subfolders should represent a different user.
+   -	**TopTLDsByTotals** – A series of pivot tables and charts showing the top 10 top-level directories based on total bytes used, total files, and total folders.
+   -	**TopTLDsByLastModBytes** – A pivot table and chart showing top 10 top-level directories based on most bytes modified in the past year.
+   -	**TopTLDsByLastModFiles** – A pivot table and chart showing top 10 top-level directories based on most files modified in the past year.
+   -	**LegacyTLDs** – A list of all top-level directories that do not contain any files modified in the past 365 days.
+   -	**TreeDepth** – A tally of bytes, folders, and files found at each depth level of the folder structure. For customers doing a pre-migration analysis, depths that are showing as green are good candidates for PeerSync Migration’s tree depth setting.
+   -	**FileExtInfo** – A list of all discovered extensions, including pivot tables sorted by total bytes and total files.
+   -	**FileAttributes** – A summary of all file and folder attributes found.
 
    .. figure:: images/fsa7.png
 

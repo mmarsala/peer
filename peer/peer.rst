@@ -674,27 +674,26 @@ As this tool is primarily for our partners, we would love to hear any feedback y
 
    The full report contains the following information:
 
-   -	**Overview** – A series of pivot tables and charts showing high level statistics about the path that was scanned.
-   -	**Analysis** – Includes a pivot table and a pair of charts highlighting additional statistics about the path that was scanned.
-   -	**InfoSheet** – Details about this specific scan.
-   -	**OverallStats** – Overall statistics for the folder that was scanned. This includes total bytes, files, folders, etc.
-   -	**HighSubFolderCounts** – A list of all folders containing more than 1000 child directories.
-   -	**HighByteCounts** – A list of all folders containing more than 100GB of child file data.
-   -	**HighFileCounts** – A list of all folders containing more than 10,000 child files.
-   -	**LargeFiles** – A list of all discovered files that are 10GB or larger.
-   -	**DeepPaths** – A list of all paths discovered that are 20 levels deep or deeper.
-   -	**ReparsePointsSummary** – A summary of all reparse points discovered, regardless of file or folder.
-   -	**ReparsePoints** – A list of all folder reparse points discovered.
-   -	**TimeAnalysis** – A breakdown of total files, folders, and bytes by age.
-   -	**TLDAnalysis** - A list of each folder immediately under a specified path with statistics for each of these subfolders. In a user home directory environment, each of these subfolders should represent a different user.
-   -	**TopTLDsByTotals** – A series of pivot tables and charts showing the top 10 top-level directories based on total bytes used, total files, and total folders.
-   -	**TopTLDsByLastModBytes** – A pivot table and chart showing top 10 top-level directories based on most bytes modified in the past year.
-   -	**TopTLDsByLastModFiles** – A pivot table and chart showing top 10 top-level directories based on most files modified in the past year.
-   -	**LegacyTLDs** – A list of all top-level directories that do not contain any files modified in the past 365 days.
-   -	**TreeDepth** – A tally of bytes, folders, and files found at each depth level of the folder structure. For customers doing a pre-migration analysis, depths that are showing as green are good candidates for PeerSync Migration’s tree depth setting.
-   -	**FileExtInfo** – A list of all discovered extensions, including pivot tables sorted by total bytes and total files.
-   -	**FileAttributes** – A summary of all file and folder attributes found.
-
+   - **Overview** – A series of pivot tables and charts showing high level statistics about the path that was scanned.
+   - **Analysis** – Includes a pivot table and a pair of charts highlighting additional statistics about the path that was scanned.
+   - **InfoSheet** – Details about this specific scan.
+   - **OverallStats** – Overall statistics for the folder that was scanned. This includes total bytes, files, folders, etc.
+   - **HighSubFolderCounts** – A list of all folders containing more than 1000 child directories.
+   - **HighByteCounts** – A list of all folders containing more than 100GB of child file data.
+   - **HighFileCounts** – A list of all folders containing more than 10,000 child files.
+   - **LargeFiles** – A list of all discovered files that are 10GB or larger.
+   - **DeepPaths** – A list of all paths discovered that are 20 levels deep or deeper.
+   - **ReparsePointsSummary** – A summary of all reparse points discovered, regardless of file or folder.
+   - **ReparsePoints** – A list of all folder reparse points discovered.
+   - **TimeAnalysis** – A breakdown of total files, folders, and bytes by age.
+   - **TLDAnalysis** - A list of each folder immediately under a specified path with statistics for each of these subfolders. In a user home directory environment, each of these subfolders should represent a different user.
+   - **TopTLDsByTotals** – A series of pivot tables and charts showing the top 10 top-level directories based on total bytes used, total files, and total folders.
+   - **TopTLDsByLastModBytes** – A pivot table and chart showing top 10 top-level directories based on most bytes modified in the past year.
+   - **TopTLDsByLastModFiles** – A pivot table and chart showing top 10 top-level directories based on most files modified in the past year.
+   - **LegacyTLDs** – A list of all top-level directories that do not contain any files modified in the past 365 days.
+   - **TreeDepth** – A tally of bytes, folders, and files found at each depth level of the folder structure. For customers doing a pre-migration analysis, depths that are showing as green are good candidates for PeerSync Migration’s tree depth setting.
+   - **FileExtInfo** – A list of all discovered extensions, including pivot tables sorted by total bytes and total files.
+   - **FileAttributes** – A summary of all file and folder attributes found.
 
    .. figure:: images/fsa7.png
 

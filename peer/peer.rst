@@ -666,11 +666,11 @@ As this tool is primarily for our partners, we would love to hear any feedback y
 
      Report download links are only active for **24 hours**. Contact Peer Software to access any expired reports.
 
-     Some systems may open these workbooks in a protected mode, displaying this message in Excel:
-   .. figure:: images/fsa8.png
-     If you see this message at the top of Excel, click Enable Editing to fully open the workbook. If you do not do this, the pivot tables and charts will not load properly.
+  Some systems may open these workbooks in a protected mode, displaying this message in Excel:
+  .. figure:: images/fsa8.png
+  If you see this message at the top of Excel, click Enable Editing to fully open the workbook. If you do not do this, the pivot tables and charts will not load properly.
 
-   The full report contains the following information:
+  The full report contains the following information:
 
    -	**Overview** – A series of pivot tables and charts showing high level statistics about the path that was scanned.
    -	**Analysis** – Includes a pivot table and a pair of charts highlighting additional statistics about the path that was scanned.

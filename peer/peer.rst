@@ -670,7 +670,7 @@ As this tool is primarily for our partners, we would love to hear any feedback y
 
    .. figure:: images/fsa8.png
 
-   If you see this message at the top of Excel, click Enable Editing to fully open the workbook. If you do not do this, the pivot tables and charts will not load properly.
+   If you see this message at the top of Excel, click **Enable Editing** to fully open the workbook. If you do not do this, the pivot tables and charts will not load properly.
 
    The full report contains the following information:
 

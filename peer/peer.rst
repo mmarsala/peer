@@ -695,6 +695,7 @@ As this tool is primarily for our partners, we would love to hear any feedback y
    -	**FileExtInfo** – A list of all discovered extensions, including pivot tables sorted by total bytes and total files.
    -	**FileAttributes** – A summary of all file and folder attributes found.
 
+
    .. figure:: images/fsa7.png
 
 Takeaways

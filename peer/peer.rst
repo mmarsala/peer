@@ -116,7 +116,7 @@ If you only have a single cluster to work with, *Initials*\ -**PeerAgentB** will
 
 #. **Power On** your *Initials*\ **-PeerMgmt** and *Initials*\ **-PeerAgentA** VMs.
 
-#. If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue to `**Staging an Agent on your Secondary Cluster**`. If you only have a single cluster, repeat steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to `**Windows File Server**`.
+#. If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue to `Staging an Agent on your Secondary Cluster`. If you only have a single cluster, repeat steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to `Windows File Server`.
 
 --------------------------------------------------------
 
@@ -261,7 +261,7 @@ Installing Peer Management Center
 
 In this exercise you'll walk through the installation of Peer Management Center (PMC). PMC serves as the centralized management component for the Peer Global File Service.
 
-PMC does not store any file data but does facilitate communication between locations so it should be deployed at a location with the best connectivity. A single deployment of PMC can manage 50 or more Agents/file servers.
+PMC does not store any file data but does facilitate communication between locations so it should be deployed at a location with the best connectivity. A single deployment of PMC can manage 100 or more Agents/file servers.
 
 #. Connect to your *Initials*\ -**PeerMgmt** VM on your **Primary** cluster via RDP or VM console using the following credentials:
 

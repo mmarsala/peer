@@ -209,7 +209,7 @@ The final step of staging the lab is configuring *Initials*\ **-PeerAgentB** as 
 
    Finally, you will populate your newly created Windows file share with sample data.
 
-#. Within your *Initials*\ **-PeerAgentB** VM, download the **SampleData_Small.zip** file from http://10.42.194.11/workshop_staging/peer/ and extract its contents in ``C:\Data\``. When complete, your Data directory should resemble the screenshot below:
+#. Within your *Initials*\ **-PeerAgentB** VM, download the **SampleData_Small.zip** file from either `http://10.42.194.11/workshop_staging/peer/`_ for clusters that start with **PHX-** or `http://10.55.251.38/workshop_staging/peer/`_ for clusters that start with **RTP-**. Extract its contents in ``C:\Data\``. When complete, your Data directory should resemble the screenshot below:
 
    .. figure:: images/5.png
 
@@ -268,7 +268,11 @@ PMC does not store any file data but does facilitate communication between locat
    - **Username** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
 
-#. Within the VM, download **PMC_Installer_Win64.exe** AND the **.lic** file from http://10.42.194.11/workshop_staging/peer/.
+#. Within the VM, download **PMC_Installer_Win64.exe** AND the **.lic** file from either `http://10.42.194.11/workshop_staging/peer/`_ for clusters that start with **PHX-** or `http://10.55.251.38/workshop_staging/peer/`_ for clusters that start with **RTP-**.
+
+   .. note::
+
+     This license file is for NFR use within the HPOC environment **only**! If you need a license for use outside of the HPOC environment, please reach out to us on Slack via the **#_peer_software_ext** channel.
 
 #. Run **PMC_Installer_Win64.exe** and proceed with the default selections **UNTIL** you reach **Peer Management Center Web Server Configuration**.
 
@@ -309,7 +313,7 @@ PeerAgentA
    - **Username** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
 
-#. Within the VM, download **P-Agent_Installer_win64.exe** from http://10.42.194.11/workshop_staging/peer/.
+#. Within the VM, download **P-Agent_Installer_win64.exe** from either `http://10.42.194.11/workshop_staging/peer/`_ for clusters that start with **PHX-** or `http://10.55.251.38/workshop_staging/peer/`_ for clusters that start with **RTP-**..
 
 #. Run **P-Agent_Installer_win64.exe** and proceed with the default selects **UNTIL** you reach **Peer Management Broker Configuration**.
 
@@ -544,7 +548,7 @@ Testing the Share
 
 .. note::
 
-  This exercise requires the :ref:`windows_tools_vm`. If you do not have an *Initials*\ **-Windows-ToolsVM**, you can perform the tests below from your *Initials*\ **-PeerMgmt** VM. If you go this route and want to test locking (steps 6 through 8 below), you must also install OpenOffice Writer or Microsoft Word on *Initials*\ **-PeerMgmt**. An OpenOffice installer can obtained from http://10.42.194.11/workshop_staging/peer/.
+  This exercise requires the :ref:`windows_tools_vm`. If you do not have an *Initials*\ **-Windows-ToolsVM**, you can perform the tests below from your *Initials*\ **-PeerMgmt** VM. If you go this route and want to test locking (steps 6 through 8 below), you must also install OpenOffice Writer or Microsoft Word on *Initials*\ **-PeerMgmt**. An OpenOffice installer can obtained from either `http://10.42.194.11/workshop_staging/peer/`_ for clusters that start with **PHX-** or `http://10.55.251.38/workshop_staging/peer/`_ for clusters that start with **RTP-**.
 
 The easiest way to verify synchronization is functioning properly is to open 2 different File Explorer windows to the respective Nutanix Files and Windows File Server paths.
 

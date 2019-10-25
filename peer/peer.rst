@@ -116,7 +116,7 @@ If you only have a single cluster to work with, *Initials*\ -**PeerAgentB** will
 
 #. **Power On** your *Initials*\ **-PeerMgmt** and *Initials*\ **-PeerAgentA** VMs.
 
-#. If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue to `Staging an Agent on your Secondary Cluster`. If you only have a single cluster, repeat steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to `Windows File Server`.
+#. If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue to `Staging an Agent on your Secondary Cluster`_. If you only have a single cluster, repeat steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to `Windows File Server`_.
 
 --------------------------------------------------------
 

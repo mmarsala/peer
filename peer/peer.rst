@@ -30,7 +30,7 @@ Key use cases for combining Peer Software with Nutanix Files include:
 
 Working from left to right, users interact with the SMB shares on the Nutanix Files cluster via a public LAN. When SMB activity occurs on the Files cluster through these shares, the Peer Partner Server (referred to as a Peer Agent) is notified via the File Activity Monitoring API from Files. The Peer Agent accesses the updated content via SMB then facilitates the flow of data to one or many remote and/or local file servers.
 
-**In this lab you will deploy and configure the Peer Global File Service software to create an Active-Active file services solution with Nutanix Files.**
+**In this lab you will deploy and configure Peer Global File Service to create an Active-Active file services solution with Nutanix Files.**
 
 Lab Setup
 +++++++++
@@ -68,7 +68,9 @@ Once complete, your lab environment will resemble the diagram below:
 
 .. figure:: images/setupdiagram.png
 
-If you only have a single cluster to work with, *Initials*\ -**PeerAgentB** will also be hosted on this cluster alongside *Initials*\ -**PeerMgmt** and *Initials*\ -**PeerAgentA**. More details are included below.
+   .. note::
+
+     If you only have a single cluster to work with, *Initials*\ -**PeerAgentB** will also be hosted on this cluster alongside *Initials*\ -**PeerMgmt** and *Initials*\ -**PeerAgentA**. More details are below.
 
 --------------------------------------------------------------------
 
@@ -116,7 +118,9 @@ If you only have a single cluster to work with, *Initials*\ -**PeerAgentB** will
 
 #. **Power On** your *Initials*\ **-PeerMgmt** and *Initials*\ **-PeerAgentA** VMs.
 
-#. If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue to `Staging an Agent on your Secondary Cluster`_. If you only have a single cluster, repeat steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to `Windows File Server`_.
+   .. note::
+
+     If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue to `Staging an Agent on your Secondary Cluster`_. If you only have a single cluster, repeat Steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to `Windows File Server`_.
 
 --------------------------------------------------------
 
@@ -209,7 +213,7 @@ The final step of staging the lab is configuring *Initials*\ **-PeerAgentB** as 
 
    Finally, you will populate your newly created Windows file share with sample data.
 
-#. Within your *Initials*\ **-PeerAgentB** VM, download the **SampleData_Small.zip** file from either http://10.42.194.11/workshop_staging/peer/ (for clusters that start with **PHX-**) or http://10.55.251.38/workshop_staging/peer/ (for clusters that start with **RTP-**). Extract its contents in ``C:\Data\``. When complete, your Data directory should resemble the screenshot below:
+#. Within your *Initials*\ **-PeerAgentB** VM, download the **SampleData_Small.zip** file from either http://10.42.194.11/workshop_staging/peer/ (for **PHX**) or http://10.55.251.38/workshop_staging/peer/ (for **RTP**). Extract its contents in ``C:\Data\``. When complete, your Data directory should resemble the screenshot below:
 
    .. figure:: images/5.png
 
@@ -259,7 +263,7 @@ Peer Global File Service requires both a File Server Admin account as well as RE
 Installing Peer Management Center
 +++++++++++++++++++++++++++++++++
 
-In this exercise you'll walk through the installation of Peer Management Center (PMC). PMC serves as the centralized management component for the Peer Global File Service.
+In this exercise you'll walk through the installation of Peer Management Center (PMC). PMC serves as the centralized management component for Peer Global File Service.
 
 PMC does not store any file data but does facilitate communication between locations so it should be deployed at a location with the best connectivity. A single deployment of PMC can manage 100 or more Agents/file servers.
 
@@ -268,7 +272,7 @@ PMC does not store any file data but does facilitate communication between locat
    - **Username** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
 
-#. Within the VM, download **PMC_Installer_Win64.exe** AND the **.lic** file from either http://10.42.194.11/workshop_staging/peer/ (for clusters that start with **PHX-**) or http://10.55.251.38/workshop_staging/peer/ (for clusters that start with **RTP-**).
+#. Within the VM, download **PMC_Installer_Win64.exe** AND the **.lic** file from either http://10.42.194.11/workshop_staging/peer/ (for **PHX**) or http://10.55.251.38/workshop_staging/peer/ (for **RTP**).
 
    .. note::
 
@@ -317,7 +321,7 @@ PeerAgentA
    - **Username** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
 
-#. Within the VM, download **P-Agent_Installer_win64.exe** from either http://10.42.194.11/workshop_staging/peer/ (for clusters that start with **PHX-**) or http://10.55.251.38/workshop_staging/peer/ (for clusters that start with **RTP-**).
+#. Within the VM, download **P-Agent_Installer_win64.exe** from either http://10.42.194.11/workshop_staging/peer/ (for **PHX**) or http://10.55.251.38/workshop_staging/peer/ (for **RTP**).
 
 #. Run **P-Agent_Installer_win64.exe** and proceed with the default selects **UNTIL** you reach **Peer Management Broker Configuration**.
 
@@ -552,7 +556,7 @@ Testing the Share
 
 .. note::
 
-  This exercise requires the :ref:`windows_tools_vm`. If you do not have an *Initials*\ **-Windows-ToolsVM**, you can perform the tests below from your *Initials*\ **-PeerMgmt** VM. If you go this route and want to test locking (steps 6 through 8 below), you must also install OpenOffice Writer or Microsoft Word on *Initials*\ **-PeerMgmt**. An OpenOffice installer can obtained from either http://10.42.194.11/workshop_staging/peer/ (for clusters that start with **PHX-**) or http://10.55.251.38/workshop_staging/peer/ (for clusters that start with **RTP-**).
+  This exercise requires the :ref:`windows_tools_vm`. If you do not have an *Initials*\ **-Windows-ToolsVM**, you can perform the tests below from your *Initials*\ **-PeerMgmt** VM. If you go this route and want to test locking (Steps 6 through 8 below), you must also install OpenOffice Writer or Microsoft Word on *Initials*\ **-PeerMgmt**. An OpenOffice installer can obtained from either http://10.42.194.11/workshop_staging/peer/ (for **PHX**) or http://10.55.251.38/workshop_staging/peer/ (for **RTP**).
 
 The easiest way to verify synchronization is functioning properly is to open 2 different File Explorer windows to the respective Nutanix Files and Windows File Server paths.
 

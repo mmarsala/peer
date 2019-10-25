@@ -68,9 +68,9 @@ Once complete, your lab environment will resemble the diagram below:
 
 .. figure:: images/setupdiagram.png
 
-   .. note::
+.. note::
 
-     If you only have a single cluster to work with, *Initials*\ -**PeerAgentB** will also be hosted on this cluster alongside *Initials*\ -**PeerMgmt** and *Initials*\ -**PeerAgentA**. More details are below.
+  If you only have a single cluster to work with, *Initials*\ -**PeerAgentB** will also be hosted on this cluster alongside *Initials*\ -**PeerMgmt** and *Initials*\ -**PeerAgentA**. More details are below.
 
 --------------------------------------------------------------------
 

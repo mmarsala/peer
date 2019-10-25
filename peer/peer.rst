@@ -114,8 +114,12 @@ Once complete, your lab environment will resemble the diagram below:
 
 #. **Power On** your *Initials*\ **-PeerMgmt** and *Initials*\ **-PeerAgentA** VMs.
 
+#. If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue the setion title **Creating an Agent on your Seondary Cluster**. If you only have a single cluster, repeat steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to the section titled **Windows File Server** below.
+
 --------------------------------------------------------
 
+Creating an Agent on your Secondary Cluster
+...................
 #. Log in to your **Secondary Prism Central** and create the following VM:
 
    - **Name** - *Initials*\ -PeerAgentB
@@ -165,7 +169,7 @@ Once complete, your lab environment will resemble the diagram below:
 
 #. Run ``ipconfig /all`` and verify your **DNS Server** is set to the IP address of the **AutoDC2** VM on your primary cluster.
 
-#. Execute the following to join the domain and reboot *Initials*\ **PeerAgentB**:
+#. Execute the following to join the domain and reboot *Initials*\ **-PeerAgentB**:
 
    .. code-block:: Powershell
      :emphasize-lines: 1
@@ -417,7 +421,7 @@ Files and PeerAgentA
 
    - **Peer Agent IP** - *Initials*\ -PeerAgentA IP Address
 
-     *The IP address of the Agent server that will receive real-time notifications from the Files File Activity Monitoring API.*
+     *The IP address of the Agent server that will receive real-time notifications from the Files File Activity Monitoring API. It will be selectable from a dropdown list of available IPs on this Agent server.*
 
 #. Click **Validate** to confirm Files can be accessed via API using the provided credentials.
 
@@ -538,7 +542,7 @@ Testing the Share
 
 .. note::
 
-  This exercise requires the :ref:`windows_tools_vm`. Alternatively you can install OpenOffice Writer or Microsoft Word within your PMC VM.
+  This exercise requires the :ref:`windows_tools_vm`. If you do not have an *Initials*\ **-Windows-ToolsVM**, you can perform the tests below from your *Initials*\ **-PeerMgmt** VM. If you go this route and you want to test locking (steps 6 through 8 below), you must also install OpenOffice Writer or Microsoft Word on *Initials*\ **-PeerMgmt**. An OpenOffice installer can obtained from http://10.42.194.11/workshop_staging/peer/.
 
 The easiest way to verify synchronization is functioning properly is to open 2 different File Explorer windows to the respective Nutanix Files and Windows File Server paths.
 

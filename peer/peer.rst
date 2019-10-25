@@ -56,17 +56,19 @@ In this exercise you will use Prism Central to stage 3 VMs which will later be u
      - **Description**
    * - *Initials*\ -**PeerMgmt**
      - Primary
-     - This server will host the Peer Management Center
+     - This server will host the Peer Management Center.
    * - *Initials*\ -**PeerAgentA**
      - Primary
-     - This server will manage the Nutanix Files cluster
+     - This server will manage the Nutanix Files cluster.
    * - *Initials*\ -**PeerAgentB**
      - Secondary
-     - This Windows File Server will be used as a target for replication
+     - This Windows File Server will be used as a target for replication.
 
 Once complete, your lab environment will resemble the diagram below:
 
 .. figure:: images/setupdiagram.png
+
+If you only have a single cluster to work with, *Initials*\ -**PeerAgentB** will also be hosted on this cluster alongside *Initials*\ -**PeerMgmt** and *Initials*\ -**PeerAgentA**. More details are included below.
 
 --------------------------------------------------------------------
 
@@ -114,12 +116,12 @@ Once complete, your lab environment will resemble the diagram below:
 
 #. **Power On** your *Initials*\ **-PeerMgmt** and *Initials*\ **-PeerAgentA** VMs.
 
-#. If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue to the section titled **Creating an Agent on your Secondary Cluster**. If you only have a single cluster, repeat steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to the section titled **Windows File Server** below.
+#. If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue to `**Staging an Agent on your Secondary Cluster**`. If you only have a single cluster, repeat steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to `**Windows File Server**`.
 
 --------------------------------------------------------
 
-Creating an Agent on your Secondary Cluster
-...................
+Staging an Agent on your Secondary Cluster
+..........................................
 #. Log in to your **Secondary Prism Central** and create the following VM:
 
    - **Name** - *Initials*\ -PeerAgentB
@@ -542,7 +544,7 @@ Testing the Share
 
 .. note::
 
-  This exercise requires the :ref:`windows_tools_vm`. If you do not have an *Initials*\ **-Windows-ToolsVM**, you can perform the tests below from your *Initials*\ **-PeerMgmt** VM. If you go this route and you want to test locking (steps 6 through 8 below), you must also install OpenOffice Writer or Microsoft Word on *Initials*\ **-PeerMgmt**. An OpenOffice installer can obtained from http://10.42.194.11/workshop_staging/peer/.
+  This exercise requires the :ref:`windows_tools_vm`. If you do not have an *Initials*\ **-Windows-ToolsVM**, you can perform the tests below from your *Initials*\ **-PeerMgmt** VM. If you go this route and want to test locking (steps 6 through 8 below), you must also install OpenOffice Writer or Microsoft Word on *Initials*\ **-PeerMgmt**. An OpenOffice installer can obtained from http://10.42.194.11/workshop_staging/peer/.
 
 The easiest way to verify synchronization is functioning properly is to open 2 different File Explorer windows to the respective Nutanix Files and Windows File Server paths.
 
@@ -706,7 +708,7 @@ Takeaways
 
 - Peer Global File Service is the only solution which can provide Active-Active replication for Nutanix Files clusters.
 
-- Peer also supports multiple legacy NAS platforms and supports replication within mixed environments.This helps ease adoption of and migration to Nutanix Files.
+- Peer also supports multiple legacy NAS platforms and supports replication within mixed environments. This helps ease adoption of and migration to Nutanix Files.
 
 - Peer can directly manage Microsoft Distributed File Services (DFS) namespaces, allowing multiple file servers to be presented through a single namespace. This is a key component for supporting true Active-Active DR solutions for file sharing.
 

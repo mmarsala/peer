@@ -114,7 +114,7 @@ Once complete, your lab environment will resemble the diagram below:
 
 #. **Power On** your *Initials*\ **-PeerMgmt** and *Initials*\ **-PeerAgentA** VMs.
 
-#. If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue the setion title **Creating an Agent on your Seondary Cluster**. If you only have a single cluster, repeat steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to the section titled **Windows File Server** below.
+#. If you have a secondary cluster on which to set up *Initials*\ **-PeerAgentB**, continue to the section titled **Creating an Agent on your Secondary Cluster**. If you only have a single cluster, repeat steps 2-4 to create *Initials*\ **-PeerAgentB** then skip to the section titled **Windows File Server** below.
 
 --------------------------------------------------------
 
@@ -155,13 +155,13 @@ Creating an Agent on your Secondary Cluster
    - **Username** - Administrator
    - **Password** - nutanix/4u
 
-#. Open **PowerShell** and execute the following command, replacing **10.XX.YY.40** with the IP address of your primary cluster's **AutoDC2** (Domain Controller) VM:
+#. Open **PowerShell** and execute the following command, replacing **10.XX.YY.41** with the IP address of your primary cluster's **AutoDC2** (Domain Controller) VM:
 
    .. code-block:: Powershell
      :emphasize-lines: 1
 
      # Updates your network adapter to use your Primary cluster DC for DNS
-     Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddress "10.XX.YY.40"
+     Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddress "10.XX.YY.41"
 
    .. note::
 
@@ -706,7 +706,7 @@ Takeaways
 
 - Peer Global File Service is the only solution which can provide Active-Active replication for Nutanix Files clusters.
 
-- Peer also supports multiple legacy NAS platforms, allowing for replication within mixed environments or easing migration to Nutanix Files.
+- Peer also supports multiple legacy NAS platforms and supports replication within mixed environments.This helps ease adoption of and migration to Nutanix Files.
 
 - Peer can directly manage Microsoft Distributed File Services (DFS) namespaces, allowing multiple file servers to be presented through a single namespace. This is a key component for supporting true Active-Active DR solutions for file sharing.
 

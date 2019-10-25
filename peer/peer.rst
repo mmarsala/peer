@@ -268,7 +268,7 @@ PMC does not store any file data but does facilitate communication between locat
    - **Username** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
 
-#. Within the VM, download **PMC_Installer_Win64.exe** AND the **.lic** from http://10.42.194.11/workshop_staging/peer/.
+#. Within the VM, download **PMC_Installer_Win64.exe** AND the **.lic** file from http://10.42.194.11/workshop_staging/peer/.
 
 #. Run **PMC_Installer_Win64.exe** and proceed with the default selections **UNTIL** you reach **Peer Management Center Web Server Configuration**.
 

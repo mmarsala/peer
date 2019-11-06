@@ -725,3 +725,5 @@ Takeaways
 - Peer can directly manage Microsoft Distributed File Services (DFS) namespaces, allowing multiple file servers to be presented through a single namespace. This is a key component for supporting true Active-Active DR solutions for file sharing.
 
 - Peer offers tools for analyzing existing file servers to help with resource planning, optimization, and migration.
+
+Thanks for participating in this lab! For more information on the joint Nutanix and Peer Software partnership, please visit http://www.peersoftware.com/GoNutanix.
